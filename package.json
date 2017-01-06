@@ -1,0 +1,33 @@
+{
+  "name": "photo-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.12.6",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+      "start": "nodemon index.js",
+      "debug": "node-debug index",
+      "knex": "knex",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaUlyanova/photo-gallery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaUlyanova/photo-gallery/issues"
+  },
+  "homepage": "https://github.com/AnnaUlyanova/photo-gallery#readme"
+}
