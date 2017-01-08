@@ -1,0 +1,16 @@
+  <h1>New Zealand {{images.0.type}}</h1>
+
+<div class="thumbnails">
+
+  {{#each images}}
+    <img onmouseover="getElementById('preview').src=getElementById('{{id}}').src" id="{{id}}" src="{{url}}" alt="{{alt}}" />
+  {{/each}}
+
+</div>
+
+
+<div class="preview">
+
+  	<img id="preview" src="{{images.0.url}}" alt="{{images.0.alt}}" />
+
+</div>

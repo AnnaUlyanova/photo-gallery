@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('url')
     table.string('alt')
     table.string('type')
+    table.string('home')
   })
 };
 

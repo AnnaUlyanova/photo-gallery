@@ -2,14 +2,76 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta content="charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{title}}</title>
     <link rel="stylesheet" type="text/css" href="/main.css">
-  </head>
+
+    <!-- FlexSlider pieces -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/jquery.flexslider-min.js"></script>
+
+    <script src="/css3-mediaqueries.js"></script>
+
+    <!-- Kwiks pieces -->
+    <script src="/kwiks.js"></script>
+
+    <script type="text/javascript">
+    		var Main = Main || {};
+
+    		jQuery(window).load(function() {
+    			window.responsiveFlag = jQuery('#responsiveFlag').css('display');
+    			Main.gallery = new Gallery();
+
+    			jQuery(window).resize(function() {
+    				Main.gallery.update();
+    			});
+    		});
+
+    		function Gallery(){
+    			var self = this,
+    				container = jQuery('.flexslider'),
+    				clone = container.clone( false );
+
+    			this.init = function (){
+    				if( responsiveFlag == 'block' ){
+    					var slides = container.find('.slides');
+
+    					slides.kwicks({
+    						max : 500,
+    						spacing : 0
+    					}).find('li > a').click(function (){
+    						return false;
+    					});
+    				} else {
+    					container.flexslider();
+    				}
+    			}
+    			this.update = function () {
+    				var currentState = jQuery('#responsiveFlag').css('display');
+
+    				if(responsiveFlag != currentState) {
+
+    					responsiveFlag = currentState;
+    					container.replaceWith(clone);
+    					container = clone;
+    					clone = container.clone( false );
+
+    					this.init();
+    				}
+    			}
+
+    			this.init();
+    		}
+    	</script>
+
+        </head>
   <body>
     {{>header}}
 
     {{{body}}}
 
     {{>footer}}
+
   </body>
 </html>

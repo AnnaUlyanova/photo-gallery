@@ -1,1 +1,17 @@
-Home Page
+<h1>New Zealand Photo Gallery</h1>
+
+<div id="container">
+  <div class="flexslider">
+
+    <ul class="slides">
+      {{#each images}}
+      <li>
+        <img src="{{url}}" />
+        <div class="flex-caption">
+          <h3>{{type}}</h3>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

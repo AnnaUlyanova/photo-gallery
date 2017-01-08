@@ -26,3 +26,6 @@ server.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 server.get('/', routes.getHome)
 server.get('/landscapes', routes.getLandscapes)
+server.get('/cityscapes', routes.getCityscapes)
+server.get('/sunsets', routes.getSunsets)
+server.get('/wildlife', routes.getAnimals)
